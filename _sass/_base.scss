@@ -305,6 +305,13 @@ ul.task-list input[type="checkbox"] {
     }
   }
 
+  .navbar-nav .nav-item.disabled .nav-link {
+    color: #6c757d !important;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
   .navbar-brand.social {
     padding-bottom: 0;
     padding-top: 0;
