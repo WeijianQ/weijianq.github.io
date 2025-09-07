@@ -198,6 +198,20 @@ The quote below is taken directly from the [jekyll configuration docs](https://j
 >
 > The contents of `<destination>` are automatically cleaned, by default, when the site is built. Files or folders that are not created by your site will be removed. Some files could be retained by specifying them within the `<keep_files>` configuration directive.
 >
+
+## Local Development
+
+Run the site either with Docker (recommended) or natively:
+
+- Docker
+  - `docker compose up`
+  - Open http://localhost:4000 (Ctrl-C to stop). Live reload is enabled.
+
+- Native
+  - Ensure Ruby 3.2+ is installed; then run `bin/serve`.
+  - Bundler is preconfigured to install gems into `vendor/bundle` and to force native builds to avoid `ffi_c`/`sassc` issues on macOS.
+  - If you see an insecure PATH warning for `/opt/homebrew/bin` (mode 0777), fix with: `sudo chmod 755 /opt/homebrew /opt/homebrew/bin`.
+
 > Do not use an important location for `<destination>`; instead, use it as a staging area and copy files from there to your web server.
 
 If `$HOME/repo/publishing-source` contains files that you want jekyll to leave untouched, specify them under `keep_files` in `_config.yml`.

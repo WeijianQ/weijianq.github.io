@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Local Jekyll serve helper
+
+require_cmd() {
+  command -v "$1" >/dev/null 2>&1 || { echo "Missing dependency: $1"; exit 1; }
+}
+
+require_cmd bundle
+require_cmd ruby
+
+echo "Configuring bundler (path + force ruby platform)..."
+bundle config set path 'vendor/bundle' >/dev/null
+bundle config set force_ruby_platform true >/dev/null
+
+echo "Installing gems... (this may take a minute)"
+bundle install --clean --retry 2
+
+echo "Starting Jekyll server at http://127.0.0.1:4000 ..."
+exec bundle exec jekyll serve --livereload --host 0.0.0.0 --config _config.yml,_config.dev.yml

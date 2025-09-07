@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  site:
+    build: .
+    ports:
+      - "4000:4000"
+      - "35729:35729" # livereload
+    volumes:
+      - .:/srv/jekyll:cached
+    environment:
+      BUNDLE_PATH: /srv/jekyll/vendor/bundle
+      BUNDLE_FORCE_RUBY_PLATFORM: "true"
+    command: bash -lc "bundle install && bundle exec jekyll serve --livereload --host 0.0.0.0 --config _config.yml,_config.dev.yml"
