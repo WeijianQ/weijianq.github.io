@@ -21,8 +21,14 @@
               <div>{{- entry.abbr -}}</div>
             {% endif %}
           </abbr>
+          {% if entry.abbr_note %}
+            <div style="font-size: 0.8em; color: #666; text-align: center; margin-top: 2px;">{{ entry.abbr_note }}</div>
+          {% endif %}
         {% else %}
           <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+        {% endif %}
+        {% if entry.abbr_note %}
+          <div style="font-size: 0.8em; color: #666; text-align: center; margin-top: 2px;">{{ entry.abbr_note }}</div>
         {% endif %}
       {% endif %}
       {% if entry.preview %}
