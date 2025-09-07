@@ -23,7 +23,7 @@ selected_papers:
   limit: 10 # leave blank to include all the news in the `_news` folder
 ---
 
-I am a 2nd year master's student in Computer Science and Engineering at The Ohio State University, advised by [Prof Yu Su](https://ysu1989.github.io/). 
+I am a 2nd year master's student in Computer Science and Engineering at The Ohio State University, advised by [Prof Yu Su](https://ysu1989.github.io/).
 
 I study and build <strong>memory</strong> system for language agents.
 
