@@ -3,10 +3,10 @@
 # -----------------------------------------------------------------------------
 
 title: blank # if blank, full name will be used instead
-first_name: John
+first_name: Weijian
 middle_name: 
-last_name: Doe
-email: john.doe@example.com
+last_name: Qi
+email: qwj0916@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website template powered by Jekyll and the al-folio theme.
 footer_text: >
@@ -15,9 +15,9 @@ footer_text: >
 keywords:  # add your own keywords or leave empty
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: avatar.jpg  # favicon image in /assets/img/
+icon: cartoon_me_expanded.png  # favicon image in /assets/img/
 
-url: https://johndoe.github.io # the base hostname & protocol for your site
+url: https://weijianq.github.io # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/
 last_updated: true # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -155,6 +155,40 @@ plugins:
   - jekyll-seo-tag
   - jemoji
 
+# -----------------------------------------------------------------------------
+# Publications rendering (advanced bib template compatibility)
+# -----------------------------------------------------------------------------
+
+# Enables publication thumbnails and venue badge column used by the bib layout
+enable_publication_thumbnails: true
+
+# Filter out certain bibtex entry keywords used internally from the bib output
+filtered_bibtex_keywords:
+  [
+    abbr,
+    abstract,
+    additional_info,
+    altmetric,
+    annotation,
+    arxiv,
+    award,
+    award_name,
+    bibtex_show,
+    blog,
+    code,
+    google_scholar_id,
+    html,
+    inspirehep_id,
+    pdf,
+    poster,
+    preview,
+    selected,
+    slides,
+    supp,
+    video,
+    website,
+  ]
+
 # Sitemap settings
 defaults:
   - scope:
@@ -202,8 +236,8 @@ jekyll-archives:
 
 scholar:
 
-  last_name: [Doe, Doe*]
-  first_name: [John, J., John*]
+  last_name: [Qi, Qi*]
+  first_name: [Weijian, W., Weijian*]
 
   style: apa
   locale: en
@@ -286,8 +320,8 @@ bootstrap:
     css: "sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY="
     js: "sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI="
 fontawesome:
-  version: "5.15.4"
-  integrity: "sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4="
+  version: "6.5.2"
+  integrity: ""
 jquery:
   version: "3.6.0"
   integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -302,8 +336,12 @@ mdb:
     css: "sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw="
     js: "sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA="
 popper:
-  version: "2.11.2"
-  integrity: "sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4="
+  # Bootstrap 4 requires Popper v1.x
+  version: "1.16.1"
+  integrity: ""
 medium_zoom:
   version: "1.0.6"
   integrity: "sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM="
+
+# Enables publication thumbnails and venue badges column
+enable_publication_thumbnails: true
